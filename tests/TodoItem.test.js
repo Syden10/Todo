@@ -24,16 +24,14 @@ describe('<TodoItem /> tests', () => {
       />
     );
     const liElement = screen.getByRole('listitem');
-    // console.log(liElement.innerHTML);
 
     expect(liElement.className).toBe(
-      'list-group-item d-flex justify-content-between'
+      'todo-item animate__animated animate__fadeInDown'
     );
 
     const spanElement = screen.getByLabelText('span');
-    // console.log(spanElement.className);
-    expect(spanElement.className).toContain('align-self-center');
-    expect(spanElement.className).not.toContain('text-decoration-line-through');
+    expect(spanElement.className).toContain('todo-item-text ');
+    expect(spanElement.className).not.toContain('todo-item-done');
   });
 
   test('should render completed todo', () => {
@@ -48,8 +46,7 @@ describe('<TodoItem /> tests', () => {
     );
 
     const spanElement = screen.getByLabelText('span');
-    // console.log(spanElement.className);
-    expect(spanElement.className).toContain('text-decoration-line-through');
+    expect(spanElement.className).toContain('todo-item-text todo-item-done');
   });
 
   test('span should trigger onToggleTodo state change', () => {
@@ -75,7 +72,6 @@ describe('<TodoItem /> tests', () => {
       />
     );
 
-    // screen.debug();
     const btnElement = screen.getByLabelText('deleteBtn');
     fireEvent.click(btnElement);
 

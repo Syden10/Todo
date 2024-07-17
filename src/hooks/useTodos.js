@@ -1,4 +1,4 @@
-import { useReducer, useEffect } from 'react';
+import { useReducer, useEffect, useState } from 'react';
 import { todoReducer } from '../todoReducer';
 
 const init = () => {
@@ -7,9 +7,14 @@ const init = () => {
 
 export const useTodos = () => {
   const [todos, dispatch] = useReducer(todoReducer, [], init);
+  const [allMarkedDone, setAllMarkedDone] = useState();
 
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));
+    if (todos.length > 0) {
+      const allDone = todos.every((todo) => todo.done);
+      setAllMarkedDone(allDone);
+    }
   }, [todos]);
 
   const handleNewTodo = (todo) => {
@@ -28,6 +33,37 @@ export const useTodos = () => {
     dispatch(action);
   };
 
+  const handleClearList = () => {
+    const action = {
+      type: 'Clear list',
+    };
+    dispatch(action);
+    setAllMarkedDone(false);
+  };
+
+  const handleMarkAllDone = () => {
+    const action = {
+      type: 'Mark all done',
+    };
+    dispatch(action);
+  };
+
+  const handleMarkAllUndone = () => {
+    const action = {
+      type: 'Mark all undone',
+    };
+    dispatch(action);
+  };
+
+  const handleToggleAll = () => {
+    if (allMarkedDone) {
+      handleMarkAllUndone();
+    } else {
+      handleMarkAllDone();
+    }
+    setAllMarkedDone(!allMarkedDone);
+  };
+
   const handleToggleTodo = (id) => {
     dispatch({
       type: 'Toggle todo',
@@ -35,16 +71,35 @@ export const useTodos = () => {
     });
   };
 
+  const handleEditTodo = (id) => {
+    dispatch({
+      type: 'Trigger todo edit',
+      payload: id,
+    });
+  };
+
+  const handleUpdateTodo = (id, text) => {
+    dispatch({
+      type: 'Update edited todo',
+      payload: { id, text },
+    });
+  };
+
   const todosCount = todos.length;
 
-  const pendingTodosCount = todos.filter((todo) => !todo.done).length;
+  const doneTodosCount = todos.filter((todo) => todo.done).length;
 
   return {
     todos,
     handleDeleteTodo,
     handleToggleTodo,
+    handleClearList,
+    handleToggleAll,
+    allMarkedDone,
     handleNewTodo,
     todosCount,
-    pendingTodosCount,
+    doneTodosCount,
+    handleEditTodo,
+    handleUpdateTodo,
   };
 };

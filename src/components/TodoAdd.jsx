@@ -1,5 +1,6 @@
 import { useForm } from '../hooks';
 import PropTypes from 'prop-types';
+import { AddIcon } from './AddIcon';
 
 export const TodoAdd = ({ onNewTodo }) => {
   const { description, onInputChange, onResetForm } = useForm({
@@ -25,13 +26,12 @@ export const TodoAdd = ({ onNewTodo }) => {
       <input
         type='text'
         placeholder='What to do?'
-        className='form-control'
         value={description}
         onChange={onInputChange}
         name='description'
       />
-      <button type='submit' className='btn btn-outline-primary mt-2'>
-        Add task
+      <button type='submit' className='btn-add-todo'>
+        <AddIcon />
       </button>
     </form>
   );

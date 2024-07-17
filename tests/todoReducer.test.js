@@ -43,6 +43,13 @@ describe('todoReudcer tests', () => {
   });
 
   test('should toggle todo done state', () => {
+    const initialState = [
+      {
+        id: 1,
+        description: 'Learn React',
+        done: false,
+      },
+    ];
     const action = {
       type: 'Toggle todo',
       payload: 1,
