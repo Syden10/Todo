@@ -1,6 +1,8 @@
 # Todo App
 
-Basic todo app, UI/UX overhaul coming.
+Basic todo app, made with ❤️
+
+Stack: React + Vite + CSS + Bootstrap grid
 
 Install deps:
 `yarn install`
