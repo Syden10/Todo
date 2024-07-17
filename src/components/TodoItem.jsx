@@ -68,7 +68,7 @@ export const TodoItem = ({
               isEditing && handleSave(e);
             }}
           >
-            <CheckIcon style={{ svg: { width: '24px' } }} />
+            <CheckIcon />
           </button>
           <div
             className={`edit-btn-box ${isEditing ? 'hidden' : ''}`}
