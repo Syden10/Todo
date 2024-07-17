@@ -227,10 +227,7 @@ footer {
   width: 2rem;
   margin: 0 16px 0 8px;
   border: none;
-}
-.edit-btn-box > svg.bi-check-lg {
-  width: 24px;
-  height: 24px;
+  padding: 0;
 }
 
 .delete-btn-box {
