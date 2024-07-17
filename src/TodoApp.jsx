@@ -64,14 +64,16 @@ export const TodoApp = () => {
             </div>
           </div>
         </section>
-        <footer className='container animate__animated animate__fadeInUp'>
+      </main>
+      <footer className='animate__animated animate__fadeInUp'>
+        <section className='container add-todo-box'>
           <div className='row'>
             <div className='col-12'>
               <TodoAdd onNewTodo={handleNewTodo} />
             </div>
           </div>
-        </footer>
-      </main>
+        </section>
+      </footer>
     </>
   );
 };

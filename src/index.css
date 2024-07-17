@@ -87,12 +87,18 @@ form {
 }
 
 footer {
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 10px;
+  padding: 0 20px;
+}
+
+.add-todo-box {
   background-color: rgba(255, 255, 255, 0.25);
   border-radius: 16px;
-  bottom: 10px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 15px;
-  padding: 10px 0px;
-  position: sticky;
+  padding: 10px;
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
 }
@@ -219,8 +225,12 @@ footer {
   height: 2rem;
   justify-content: center;
   width: 2rem;
-  margin-right: 16px;
+  margin: 0 16px 0 8px;
   border: none;
+}
+.edit-btn-box > svg.bi-check-lg {
+  width: 24px;
+  height: 24px;
 }
 
 .delete-btn-box {
@@ -237,14 +247,13 @@ footer {
 
 .content-box {
   padding-bottom: 20px;
-  min-height: calc(100vh - 230px);
 }
 
 .hidden {
   display: none;
 }
 
-.visible {
+.show {
   display: flex;
 }
 

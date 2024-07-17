@@ -62,13 +62,13 @@ export const TodoItem = ({
           </div>
           <button
             type='submit'
-            className={`edit-btn-box ${isEditing ? 'visible' : 'hidden'}`}
+            className={`edit-btn-box ${isEditing ? 'show' : 'hidden'}`}
             onClick={(e) => {
               e.stopPropagation();
               isEditing && handleSave(e);
             }}
           >
-            <CheckIcon />
+            <CheckIcon style={{ svg: { width: '24px' } }} />
           </button>
           <div
             className={`edit-btn-box ${isEditing ? 'hidden' : ''}`}
