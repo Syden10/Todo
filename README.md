@@ -2,7 +2,7 @@
 
 Basic todo app, made with ❤️
 
-Stack: React + Vite + CSS + Bootstrap grid
+Stack: React + Vite + Bootstrap grid
 
 Install deps:
 `yarn install`
