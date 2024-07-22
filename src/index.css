@@ -217,9 +217,11 @@ footer {
 .edit-btn-box {
   align-items: center;
   appearance: none;
-  background-color: #eee;
+  /* background-color: #eee; */
+  background: linear-gradient(45deg, #29bee3, #403efb);
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  color: gray;
+  color: white;
   cursor: pointer;
   display: flex;
   height: 2rem;
@@ -232,10 +234,12 @@ footer {
 
 .delete-btn-box {
   cursor: pointer;
-  color: #f2542d;
+  color: white;
+  background: linear-gradient(45deg, #ee8c8c, #f22d2d);
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
   width: 2rem;
   height: 2rem;
-  background-color: #fadddd;
+  /* background-color: #fadddd; */
   border-radius: 50%;
   display: flex;
   justify-content: center;
