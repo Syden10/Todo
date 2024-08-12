@@ -87,7 +87,7 @@ export const useTodos = () => {
 
   const todosCount = todos.length;
 
-  const doneTodosCount = todos.filter((todo) => todo.done).length;
+  const pendingTodosCount = todos.filter((todo) => !todo.done).length;
 
   return {
     todos,
@@ -98,7 +98,7 @@ export const useTodos = () => {
     allMarkedDone,
     handleNewTodo,
     todosCount,
-    doneTodosCount,
+    pendingTodosCount: pendingTodosCount,
     handleEditTodo,
     handleUpdateTodo,
   };

@@ -5,7 +5,7 @@ export const TodoApp = () => {
   const {
     todos,
     todosCount,
-    doneTodosCount,
+    pendingTodosCount: pendingTodosCount,
     handleDeleteTodo,
     handleToggleTodo,
     handleClearList,
@@ -23,7 +23,7 @@ export const TodoApp = () => {
   return (
     <>
       <small className='animate__animated animate__fadeInDown todo-count'>
-        {doneTodosCount} of {todosCount} done
+        {pendingTodosCount} of {todosCount} pending
       </small>
       <header className='animate__animated animate__fadeInDown'>
         <div className='container title-box'>
