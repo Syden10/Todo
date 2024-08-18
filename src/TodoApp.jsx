@@ -23,7 +23,7 @@ export const TodoApp = () => {
   return (
     <>
       <small className='animate__animated animate__fadeInDown todo-count'>
-        {pendingTodosCount} of {todosCount} pending
+        {pendingTodosCount} of {todosCount}
       </small>
       <header className='animate__animated animate__fadeInDown'>
         <div className='container title-box'>
